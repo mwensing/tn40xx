@@ -1,13 +1,22 @@
 # tn40xx
-FreeBSD tn40xx Driver
+FreeBSD tn40xx Driver - See Copyright Below
 
 # Notes
+
+2023-03-06 - Compiled on FreeBSD 12.3 - Still need to test versus the .ko I found
+             at [1] https://www.uptimed.nl/drivers for FreeBSD. The .ko at that site
+             does run, so I need to compare that with the one I have built from these
+             sources. The .ko at [1] is running in my Proxmox virtualized Pfsense 2.6.0 
+             install (in this case) so I have a working env to test with and report back on
 
 2023-03-04 - First code copy and paste salvage effort 
            - See the History below
            - See also the Copyright attribution
+           - At this time it is unclear if this will build, but I will try that next
+           - I also found https://github.com/acooks/tn40xx-driver so some of what is
+             there might also help here.
 
-# History:
+# History
 
 I decided to see if I could salvage the tn40xx driver for FreeBSD
 
