@@ -2820,7 +2820,9 @@ void bdx_setmulti(struct bdx_priv *priv)
 	struct ifnet   		*ifp 		= tn40_priv->ifp;
 
 	ENTER;
+#if __FreeBSD_version < 1300000
 	if_maddr_rlock(ifp);
+#endif
 	// Set IMF to deny all multicast frames
 	for (j = 0; j < MAC_MCST_HASH_NUM; j++)
 	{
@@ -2853,7 +2855,9 @@ void bdx_setmulti(struct bdx_priv *priv)
 		val |= (1 << (hash % 32));
 		WRITE_REG(priv, reg, val);
 	}
+#if __FreeBSD_version < 1300000
 	if_maddr_runlock(ifp);
+#endif
 	EXIT;
 
  } // bdx_setmulti()
