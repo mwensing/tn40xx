@@ -554,13 +554,13 @@ static int __init bdx_mdio_phy_search(struct bdx_priv *priv, int *port_t, enum P
             break;
 #endif
 
-// #ifdef PHY_MV88X3120
-//         case 0x01405896:
-//             s="MV88X3120 10Gbps 10GBase-T";
-//             *phy_t = MV88X3120_register(priv);
-//             break;
-// 
-// #endif
+#ifdef PHY_MV88X3120
+        case 0x01405896:
+            s="MV88X3120 10Gbps 10GBase-T";
+            *phy_t = MV88X3120_register(priv);
+            break;
+
+#endif
 
 #if (defined PHY_MV88X3310) || (defined PHY_MV88E2010)
         case 0x02b09aa:
